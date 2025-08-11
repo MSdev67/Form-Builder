@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom transitions */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Custom focus styles */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-300 transition-colors;
+}
+
+/* Custom form styles */
+.form-input {
+  @apply border border-gray-300 rounded px-3 py-2 focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300;
+}
+
+/* Custom card styles */
+.card {
+  @apply bg-white p-6 rounded-lg shadow border border-gray-200;
+}
+
+/* Drag and drop styles */
+[data-rbd-drag-handle-context-id] {
+  cursor: grab;
+}
+
+[data-rbd-draggable-context-id] {
+  touch-action: none;
+}
+
+[data-rbd-drag-handle-context-id]:active {
+  cursor: grabbing;
+}
+
+/* Dragging state */
+[data-rbd-draggable-context-id][data-rbd-draggable-id]:not([data-rbd-draggable-id='placeholder']) {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transform: rotate(2deg);
+}
+
+/* Category item hover */
+.category-item:hover {
+  background-color: #f0f4ff;
+}
